@@ -1,0 +1,25 @@
+include components/head.pug
+body(class="login")
+	h1(class="login_title") Регистрация
+		a(class="login_title_link" href="./login.html") вход
+		a(class="login_title_back" href="./")
+
+	form(class="login_form")
+		header(class="login_form_header")
+			input(class="login_input" type="" name="name" placeholder="Имя" required)
+			input(class="login_input" type="email" name="email" placeholder="Email" required)
+			div(class="login_form_password")
+				input(class="login_input" id="password" type="password" name="password" placeholder="Пароль" required)
+				div(class="login_input_show")
+					div(class="login_input_show_button")
+
+		footer
+			button(class="btn btn_primary" type="submit") Зарегистрироваться
+			a(class="btn btn_login" href="./forgot.html") Забыли пароль?
+
+
+	include components/footer.pug
+
+
+
+

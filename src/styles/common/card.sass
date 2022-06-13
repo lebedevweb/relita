@@ -1,0 +1,56 @@
+.card
+  &_short,
+  &_long
+    box-sizing: border-box
+    position: relative
+    display: block
+    background-position: center
+    background-repeat: no-repeat
+    background-size: 110%
+
+    margin-bottom: 16px
+
+  &_short
+    width: 49%
+    padding-top: 49%
+
+    & > .card_description
+      width: 100%
+
+  &_long
+    width: 100%
+    padding-top: 50%
+
+    & > .card_description
+      width: 50%
+
+  &_description
+    box-sizing: border-box
+    position: absolute
+    display: flex
+    align-items: center
+    left: 0
+    top: calc(50% - 27px)
+    min-height: 55px
+    background: rgba(0, 0, 0, 0.35)
+    backdrop-filter: blur(6px)
+    padding: 10px 5px
+
+    @media only screen and (max-width: 375px)
+      top: calc(50% - 31px)
+      min-height: 63px
+
+    & > p
+      font-size: 18px
+      font-weight: bold
+      color: #fff
+
+      @media only screen and (max-width: 460px)
+        font-size: 15px
+
+      & > span
+        display: block
+        font-size: 15px
+
+        @media only screen and (max-width: 375px)
+          font-size: 12px

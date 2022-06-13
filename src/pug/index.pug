@@ -1,0 +1,21 @@
+include components/head.pug
+body(class="login")
+  section(class="login_screen")
+    a(class="login_link" href="#0")
+      img(class="login_logo" src="./images/login/logo.png")
+  section(class="login_container")
+    a(class="btn btn_primary" href="./login.html") Войти
+    a(class="btn btn_primary" href="./register.html") Зарегистрироваться
+    ul(class="login_lang")
+      li(class="login_lang_item current")
+        a(href="#0") RU
+      li(class="login_lang_item")
+        a(href="#0") EN
+      li(class="login_lang_item")
+        a(href="#0") CN
+
+  include components/footer.pug
+
+
+
+

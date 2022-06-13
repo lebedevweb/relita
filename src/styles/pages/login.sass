@@ -1,0 +1,165 @@
+.login
+  height: 100vh
+  overflow-y: hidden
+
+  &_screen
+    display: flex
+    width: 100%
+    height: 100vh
+    background: linear-gradient(0deg, #013313 0%, rgba(1, 51, 19, 0.47) 120.2%)
+    transition: height ease-out .5s
+
+    &.active
+      height: calc(100vh - 292px)
+
+  &_link
+    display: block
+    width: 66vh
+    margin: auto
+    transition: width ease-out .5s
+
+    &.active
+      width: 30vh
+
+  &_logo
+    display: block
+    width: 100%
+    height: auto
+
+  &_container
+    box-sizing: border-box
+    width: 100%
+    height: 0
+    background-color: $light
+    transform-origin: bottom
+    transform: scaleY(0)
+    padding: 32px 15px
+    transition: transform ease-out .5s
+
+    & > .btn:first-child
+      margin-bottom: 15px
+
+    &.active
+      transform: scaleY(1)
+      height: auto
+
+  &_lang
+    display: flex
+    justify-content: center
+    list-style: none
+    margin-top: 88px
+
+    @media only screen and (max-width: 460px)
+      margin-top: 48px
+
+    &_item
+      color: $darkgreen
+      font-weight: 700
+      font-size: 20px
+      opacity: .5
+
+      &:not(:last-child)
+        margin-right: 10px
+
+      &.current
+        opacity: 1
+
+
+      & > a
+        color: inherit
+        text-decoration: none
+
+  &_title
+    position: relative
+    text-align: center
+    font-weight: 700
+    font-size: 30px
+    padding: 0 16px
+    margin-top: 32px
+    margin-bottom: 50px
+
+    @media only screen and (max-width: 640px)
+      font-size: 25px
+
+    &_link
+      position: absolute
+      display: block
+      top: calc(50% - 13px)
+      right: 11px
+      text-decoration: none
+      font-weight: 500
+      font-size: 15px
+      color: $green
+      padding: 5px
+
+    &_back
+      position: absolute
+      display: block
+      top: calc(50% - 8px)
+      left: 16px
+      width: 16px
+      height: 16px
+      background-repeat: no-repeat
+      background-size: cover
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11.95 12'%3E%3Cpath d='M13.47,12l4.24-4.24a1,1,0,1,0-1.42-1.42l-4.24,4.25L7.76,6.29A1,1,0,0,0,6.34,7.71L10.64,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4.29-4.3,4.24,4.25A1,1,0,0,0,17,18a1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.42Z' transform='translate(-6.05 -6)' style='fill:%23bdbdbd'/%3E%3C/svg%3E")
+
+  &_form
+    display: flex
+    position: relative
+    flex-direction: column
+    justify-content: space-between
+    max-width: 400px
+    height: calc(100vh - 173px)
+    padding: 0 16px
+    margin-left: auto
+    margin-right: auto
+
+    &_header
+      margin-bottom: 16px
+
+    &_password
+      position: relative
+      margin-top: 16px
+
+  &_input
+    display: block
+    box-sizing: border-box
+    width: 100%
+
+    font-family: Inter, sans-serif
+    background: $gray
+    border: 1px solid $darkgray
+    border-radius: 8px
+    padding: 16px 26px 16px 16px
+
+    &:not(:first-child)
+      margin-top: 16px
+
+    &::placeholder
+      color: darken($darkgray, 40)
+      transition: color ease-out 1s
+
+    &:focus::placeholder
+      color: transparent
+
+    &_show
+      position: absolute
+      display: flex
+      top: calc(50% - 27px)
+      right: 0
+      width: 26px
+      height: 54px
+
+      &_button
+        width: 24px
+        height: 24px
+        border-radius: 50%
+        cursor: pointer
+        background-repeat: no-repeat
+        background-position: center
+        background-size: 18px auto
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 16.1'%3E%3Cpath d='M10.25,12.21A3.91,3.91,0,1,1,14.16,8.3,3.91,3.91,0,0,1,10.25,12.21Zm0-6.32A2.41,2.41,0,1,0,12.66,8.3,2.41,2.41,0,0,0,10.25,5.89Z' transform='translate(-0.25 -0.25)' style='fill:%23bdbdbd'/%3E%3Cpath d='M10.25,16.35h0c-4.14,0-7.85-2.9-9.94-7.75A.76.76,0,0,1,.31,8C2.4,3.15,6.11.25,10.25.25h0c4.14,0,7.85,2.9,9.94,7.76a.76.76,0,0,1,0,.59c-2.09,4.85-5.8,7.75-9.94,7.75Zm-8.43-8c1.86,4.11,5,6.55,8.43,6.55s6.57-2.44,8.43-6.55c-1.86-4.11-5-6.55-8.43-6.55S3.68,4.19,1.82,8.3Z' transform='translate(-0.25 -0.25)' style='fill:%23bdbdbd'/%3E%3C/svg%3E")
+        margin: auto
+
+        &.active
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 16.1'%3E%3Cpath d='M20.19,8a15.33,15.33,0,0,0-3-4.57l2.11-1.76a.75.75,0,0,0,.1-1,.76.76,0,0,0-1.06-.1L16.13,2.42A9.31,9.31,0,0,0,10.25.25h0C6.11.25,2.4,3.15.31,8a.76.76,0,0,0,0,.59,15.27,15.27,0,0,0,2.95,4.56L1.15,14.92A.74.74,0,0,0,1.06,16a.72.72,0,0,0,.57.27.72.72,0,0,0,.48-.17l2.26-1.89a9.31,9.31,0,0,0,5.88,2.17h0c4.14,0,7.85-2.9,9.94-7.75A.76.76,0,0,0,20.19,8ZM1.82,8.3c1.86-4.11,5-6.55,8.43-6.55A7.76,7.76,0,0,1,15,3.41L12.7,5.28a3.85,3.85,0,0,0-2.45-.89A3.92,3.92,0,0,0,6.34,8.3a3.84,3.84,0,0,0,.5,1.87l-2.43,2A13.41,13.41,0,0,1,1.82,8.3Zm10.84,0a2.4,2.4,0,0,1-3.68,2l3.51-2.93A2.43,2.43,0,0,1,12.66,8.3Zm-4.82,0a2.4,2.4,0,0,1,3.68-2L8,9.19A2.35,2.35,0,0,1,7.84,8.3Zm2.41,6.55a7.75,7.75,0,0,1-4.7-1.65L7.8,11.32a3.85,3.85,0,0,0,2.45.89A3.91,3.91,0,0,0,14.16,8.3a3.84,3.84,0,0,0-.5-1.87l2.43-2A13.41,13.41,0,0,1,18.68,8.3C16.82,12.41,13.69,14.85,10.25,14.85Z' transform='translate(-0.25 -0.25)' style='fill:%23bdbdbd'/%3E%3C/svg%3E")

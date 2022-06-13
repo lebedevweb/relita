@@ -1,0 +1,19 @@
+include components/head.pug
+body(class="login")
+	h1(class="login_title") Забыли пароль?
+		a(class="login_title_link" href="./register.html") вход
+		a(class="login_title_back" href="./")
+
+	form(class="login_form")
+		header(class="login_form_header")
+			input(class="login_input" type="" name="name" placeholder="Имя" required)
+			input(class="login_input" type="email" name="email" placeholder="Email" required)
+		footer
+			button(class="btn btn_primary" type="submit") Восстановить
+
+
+	include components/footer.pug
+
+
+
+
