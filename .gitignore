@@ -1,0 +1,14 @@
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.sw*
+
+# build
+build/
+
+# gulp
+gulp/node_modules/
+
+# other
+*.txt
+Thrumb.db
